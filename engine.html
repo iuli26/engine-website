@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Physics Simulations</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      text-align: center;
+      background-color: #69fd19;
+      color: rgb(7, 1, 1);
+      padding: 20px 0;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      padding: 20px;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      max-width: 100%;
+      border-radius: 5px;
+    }
+
+    .card h3 {
+      margin: 10px 0;
+    }
+
+    .card a {
+      display: inline-block;
+      padding: 10px 15px;
+      margin-top: 10px;
+      text-decoration: none;
+      background-color: #00ff04;
+      color: white;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .card a:hover {
+      background-color: #24b300;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Physics Simulations</h1>
+    <p>Click on a simulation to explore and learn!</p>
+  </header>
+
+  <div class="grid-container">
+    <!-- Example Card 1 -->
+    <div class="card">
+      <img src="\images\spring_thumbnail.png" alt="Spring Simulation Preview">
+      <h3>Spring Oscillation</h3>
+      <a href="spring.html">Go to Simulation</a>
+    </div>
+
+    <!-- Example Card 2 -->
+    <div class="card">
+      <img src="\images\pendul.png" alt="Pendulum Simulation Preview">
+      <h3>Pendulum Motion</h3>
+      <a href="pendulum.html">Go to Simulation</a>
+    </div>
+
+    <!-- Add More Cards Here -->
+  </div>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendulum Simulation</title>
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: white;
+    }
+
+        header {
+      text-align: center;
+      background-color: #69fd19;
+      color: rgb(7, 1, 1);
+      padding: 20px 0;
+    }
+
+
+        canvas {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        #divPrincipal {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            padding: 20px 0;
+        }
+
+        .controls {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        #controls {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        label {
+            font-size: 14px;
+            color: #555;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 14px;
+            color: #000;
+            background-color: #69fd19;;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+      background-color: #45a049;
+      transform: scale(1.05);
+    }
+
+    button:active {
+      background-color: #39803b;
+      transform: scale(0.95);
+    }
+        .legend {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+            font-size: 12px;
+            color: #333;
+        }
+
+        .legend div {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .legend div span {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .legend .angle { background-color: #FF0000; }
+        .legend .velocity { background-color: #008000; }
+        .legend .acceleration { background-color:#0000FF ; }
+
+        #energyLabels {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        #energyLabels div {
+            text-align: center;
+            flex: 1;
+        }
+
+        input[type="range"] {
+            width: 200px;
+        }
+
+        .checkbox-group {  
+            display: flex;  
+            flex-direction: column; /* This will stack the items vertically */  
+            gap: 15px; /* This will maintain the space between the items */  
+            margin-top: 10px;  
+        }  
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Pendulum Simulation</h1>
+        <label><input type="checkbox" id="slowMotion" unchecked> Slow motion</label>
+    </header>
+    
+    <div id="divPrincipal">
+        <div>
+            <canvas id="energyCanvas" width="400" height="800"></canvas>
+            <div id="energyLabels">
+                <div>Kinetic Energy</div>
+                <div>Potential Energy</div>
+                <div>Total Energy</div>
+            </div>
+        </div>
+        <canvas id="pendulumCanvas" width="1000" height="800"></canvas>
+        <div>
+            <canvas id="plotCanvas" width="580" height="500"></canvas>
+            
+            <div class="legend">
+                <div><span class="angle"></span>Angle</div>
+                <div><span class="velocity"></span>Velocity</div>
+                <div><span class="acceleration"></span>Acceleration</div>
+            </div>
+            
+        </div>
+        <div class="checkbox-group">
+            <label><input type="checkbox" id="showCoordinate" checked> Angle</label>
+            <label><input type="checkbox" id="showVelocity" checked> Velocity</label>
+            <label><input type="checkbox" id="showAcceleration"> Acceleration</label>
+        </div>
+    </div>
+    <div id="controls">
+        <label>
+            Resistance Coefficient: 
+            <input type="range" id="resistanceSlider" min="0" max="0.3" step="0.01" value="0.0">
+            <span id="resistanceValue">0.0</span>
+        </label>
+
+        <button id="restartButton">Restart</button>
+    </div>
+
+    <script src="pendulum.js"></script>
+</body>
+</html>
