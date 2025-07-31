@@ -221,7 +221,7 @@ function drawEnergyChart(E, i, color) {
 // Update the pendulum's position
 function updatePendulum() {
     if (slowMotion.checked){
-      dt = 1/250;
+      dt = 1/150;
       pressed = 1;
     }
     else{
