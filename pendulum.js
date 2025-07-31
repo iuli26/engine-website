@@ -20,7 +20,7 @@ let frecv = 0;
 let pressed = 0;
 // Constants
 const g = 981; // Gravitational acceleration (cm/s²)
-let dt = 1 / 100; // Time step (s)
+let dt = 1 / 60; // Time step (s)
 
 // Pivot point
 const xRef = width / 2;
@@ -221,11 +221,11 @@ function drawEnergyChart(E, i, color) {
 // Update the pendulum's position
 function updatePendulum() {
     if (slowMotion.checked){
-      dt = 1/500;
+      dt = 1/250;
       pressed = 1;
     }
     else{
-      dt = 1/100;
+      dt = 1/60;
     }
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctxEn.clearRect(0, 0, canvasEnergy.width, canvasEnergy.height);
