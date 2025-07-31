@@ -174,8 +174,11 @@ function drawPendulum() {
     // Draw pendulum ball
     ctx.beginPath();
     ctx.arc(xBall, yBall, 10, 0, Math.PI * 2);
-    ctx.fillStyle = "black";
+    ctx.fillStyle = "red";
     ctx.fill();
+    ctx.strokeStyle = '#333';
+    ctx.lineWidth = 1;
+    ctx.stroke();
 
     // Draw trajectory
 
