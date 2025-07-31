@@ -106,6 +106,9 @@ function drawBall(x, y) {
   ctx.arc(x+10, y, 10, 0, Math.PI * 2);
   ctx.fillStyle = "red";
   ctx.fill();
+  ctx.strokeStyle = '#333';
+  ctx.lineWidth = 1;
+  ctx.stroke();
 }
 
 function drawForce(x, y, len) {
