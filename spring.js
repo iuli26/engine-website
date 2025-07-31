@@ -38,7 +38,7 @@ let positionArray = [];
 function drawGrid() {
   const gridSpacing = 59; // Spacing between grid lines in pixels
   const cmPerPixel =1; // Number of centimeters per pixel (adjust if needed)
-  const canvasWih = canvas.width;
+  const canvasWidth = canvas.width;
   const canvasHeight = canvas.height;
 
   // ctx.beginPath();
