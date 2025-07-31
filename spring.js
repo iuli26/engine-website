@@ -13,7 +13,7 @@ const showCoordinate = document.getElementById("showCoordinate");
 
 let pressed = 0;
 const g = 981;
-let dt = 1 / 200;
+let dt = 1 / 60;
 const numCoils = 20;
 const k = 20; // Spring constant
 const m = 2; // Mass
@@ -38,7 +38,7 @@ let positionArray = [];
 function drawGrid() {
   const gridSpacing = 59; // Spacing between grid lines in pixels
   const cmPerPixel =1; // Number of centimeters per pixel (adjust if needed)
-  const canvasWidth = canvas.width;
+  const canvasWih = canvas.width;
   const canvasHeight = canvas.height;
 
   // ctx.beginPath();
@@ -248,10 +248,10 @@ function drawPlots(dataSets, labels, colors, scaleY = 100) {
 let x_ball_prev_prev = xBall;
 function update() {
   if (slowMotion.checked) {
-    dt = 1 / 550;
+    dt = 1 / 250;
     pressed = 1; // Slow motion
   } else {
-    dt = 1 / 200; // Default time step
+    dt = 1 / 60; // Default time step
   }
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctxEn.clearRect(0, 0, canvasEnergy.width, canvasEnergy.height);
