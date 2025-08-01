@@ -21,10 +21,13 @@
 
     .grid-container {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, auto); /* Two columns, width based on content */
       gap: 20px;
       padding: 20px;
+      justify-content: center; /* Center the entire grid */
     }
+
+
 
     @media (max-width: 700px) {
       .grid-container {
@@ -34,6 +37,7 @@
 
 
     .card {
+      width: 800px;
       background: white;
       border: 1px solid #ccc;
       border-radius: 8px;
@@ -42,6 +46,7 @@
       padding: 20px;
       transition: transform 0.3s;
     }
+
 
     .card:hover {
       transform: scale(1.05);
@@ -110,5 +115,6 @@
   </div>
 </body>
 </html>
+
 
 
