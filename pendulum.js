@@ -225,7 +225,7 @@ function updatePendulum() {
       pressed = 1;
     }
     else{
-      dt = 1/60;
+      dt = 1/90;
     }
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctxEn.clearRect(0, 0, canvasEnergy.width, canvasEnergy.height);
