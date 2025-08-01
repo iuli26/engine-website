@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elastic Pendulum</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    header {
+      text-align: center;
+      background-color: #69fd19;
+      color: rgb(7, 1, 1);
+      padding: 20px 0;
+      width: 100%;
+    }
+    
+    .simulation-container {
+      margin: 20px;
+      text-align: center;
+    }
+    
+    canvas {
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .controls {
+      margin: 20px 0;
+      padding: 15px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    button {
+      padding: 10px 15px;
+      background-color: #00ff04;
+      color: rgb(5, 3, 3);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 5px;
+      transition: background-color 0.3s;
+    }
+    
+    button:hover {
+      background-color: #24b300;
+    }
+    
+    .back-button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #69fd19;
+      color: rgb(7, 1, 1);
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    
+    .back-button:hover {
+      background-color: #5ce600;
+    }
+  </style>
+</head>
+<body>
+    <header>
+    <h1>Elastic pendulum</h1>
+    <p>Drag the ball to see how the springs respond!</p>
+  </header>
+  
+  <div class="simulation-container"></div>
+    <canvas id="simulationCanvas" width="1280" height="800"></canvas>
+
+ 
+    <div class="controls">
+      <div class="control-group">
+        <label for="muSlider">Resistance Coefficient:</label>
+        <input type="range" id="muSlider" min="0" max="1" step="0.01" value="0.0">
+        <span id="muValue" class="value-display">0.0</span>
+      </div>
+      <div class="control-group">
+        <button id="resetBtn">Reset Simulation</button>
+        <button id="gravityBtn">Gravity</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="elastic_pendulum.js"></script>
+</body>
+</html>
