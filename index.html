@@ -21,10 +21,17 @@
 
     .grid-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 20px;
       padding: 20px;
     }
+
+    @media (max-width: 700px) {
+      .grid-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
 
     .card {
       background: white;
@@ -89,11 +96,18 @@
     
     <!-- Add More Cards Here -->
 
-     <div class="card">
+    <div class="card">
       <img src="\images\4springs.png" alt="Pendulum Simulation Preview">
       <h3>4 Springs Motion</h3>
       <a href="4springs.html">Go to Simulation</a>
     </div>
+    
+    <div class="card">
+      <img src="\images\elastic_pendulum.png">
+      <h3>4 Springs Motion</h3>
+      <a href="elastic_pendulum.html">Go to Simulation</a>
+    </div>
   </div>
 </body>
 </html>
+
