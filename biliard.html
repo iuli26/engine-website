@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ball Collision Simulation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      text-align: center;
+    }
+
+    header {
+      background-color: #69fd19;
+      color: rgb(7, 1, 1);
+      padding: 15px 0;
+      margin-bottom: 20px;
+    }
+
+    #canvas-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    canvas {
+      background-color: white;
+      border: 1px solid #ccc;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .buttons {
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ball Collision Simulation</h1>
+    <p>Click to position the red ball, then drag to launch!</p>
+  </header>
+
+  <div id="canvas-container">
+    <canvas id="simulationCanvas" width="1200" height="650"></canvas>
+  </div>
+
+  <div class="buttons">
+    <button id="restartBtn">Reset Simulation</button>
+  </div>
+
+  <script src="biliard.js"></script>
+</body>
+</html>
