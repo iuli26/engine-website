@@ -1,4 +1,7 @@
+
 document.addEventListener('DOMContentLoaded', function() {
+  
+
   const canvas = document.getElementById('simulationCanvas');
   const ctx = canvas.getContext('2d');
   const resetBtn = document.getElementById('resetBtn');
@@ -15,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   const k = 20; // Spring constant
   const m = 3;  // Mass of the ball
-  const damping = 0.3; // Velocity damping factor
+  let damping = 0.; // Velocity damping factor
 
   // Ball properties
   let x_ball = width / 2;
@@ -24,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
   let vX = 0, vY = 0;
 
   // Spring properties
-  const springLength = 300;
+  const springLength = 250;
   const springCoils = 20;
   const springWidth = 5;
 
@@ -44,6 +47,16 @@ document.addEventListener('DOMContentLoaded', function() {
   resetBtn.addEventListener('click', resetSimulation);
   pauseBtn.addEventListener('click', togglePause);
 
+  
+
+  const resistanceSlider = document.getElementById('resistanceSlider');
+  const resistanceValue = document.getElementById('resistanceValue');
+
+// Update resistance value when slider is moved
+  resistanceSlider.addEventListener('input', (e) => {
+      damping= parseFloat(e.target.value);
+      resistanceValue.textContent = damping;
+  });
   function resetSimulation() {
     x_ball = width / 2;
     y_ball = height / 2;
@@ -122,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
     vX += (forces.fx - damping * vX) / m * dt;
     vY += (forces.fy - damping * vY)/ m * dt;
     
-    
+   
     // Update position
     x_ball += vX * dt;
     y_ball += vY * dt;
@@ -164,7 +177,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Draw springs
     anchors.forEach(anchor => {
       drawSpring(anchor.x, anchor.y, x_ball, y_ball);
-      
+      // În drawSimulation():
+ 
       // Draw anchor points
       ctx.beginPath();
       ctx.arc(anchor.x, anchor.y, 5, 0, Math.PI * 2);
