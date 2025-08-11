@@ -212,7 +212,7 @@ function drawAngleIndicator(angle) {
 function drawEnergyChart(E, i, color) {
   
     let y = canvasEnergy.height;
-    let x = 40 + i*canvasEnergy.width/3
+    let x = 10 + i*canvasEnergy.width/3
     ctxEn.beginPath();
     ctxEn.rect(x, y, 40, -E/300);
     ctxEn.fillStyle = color;
@@ -351,3 +351,4 @@ document.getElementById("restartButton").addEventListener("click", () => {
 
 // Start the simulation
 animationLoop();
+
