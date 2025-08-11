@@ -19,12 +19,12 @@
       text-align: center;
       background-color: #69fd19;
       color: rgb(7, 1, 1);
-      padding: 20px 0;
+      padding: 10px 0;
       width: 100%;
     }
     
     .simulation-container {
-      margin: 20px;
+      margin: 10px;
       text-align: center;
     }
     
@@ -80,18 +80,19 @@
   </header>
   
   <div class="simulation-container"></div>
-    <canvas id="simulationCanvas" width="1280" height="800"></canvas>
+    <canvas id="simulationCanvas" width="1000" height="625"></canvas>
 
  
     <div class="controls">
       <div class="control-group">
-        <label for="muSlider">Resistance Coefficient:</label>
-        <input type="range" id="muSlider" min="0" max="1" step="0.01" value="0.0">
-        <span id="muValue" class="value-display">0.0</span>
+       
       </div>
       <div class="control-group">
         <button id="resetBtn">Reset Simulation</button>
         <button id="gravityBtn">Gravity</button>
+        <label for="muSlider">Resistance Coefficient:</label>
+        <input type="range" id="muSlider" min="0" max="1" step="0.1" value="0.0">
+        <span id="muValue" class="value-display">0.0</span>
       </div>
     </div>
   </div>
