@@ -6,6 +6,7 @@
   <title>4 Springs Simulation</title>
   <style>
     body {
+
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
@@ -24,11 +25,17 @@
     }
     
     .simulation-container {
+ 
       margin: 20px;
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
     }
-    
     canvas {
+
+
       background-color: white;
       border: 1px solid #ccc;
       border-radius: 8px;
@@ -80,11 +87,16 @@
   </header>
 
   <div class="simulation-container">
-    <canvas id="simulationCanvas" width="1280" height="800"></canvas>
+    <canvas id="simulationCanvas" width="1000" height="600"></canvas>
     
     <div class="controls">
       <button id="resetBtn">Reset Simulation</button>
       <button id="pauseBtn">Pause</button>
+      <label>
+          Resistance Coefficient: 
+          <input type="range" id="resistanceSlider" min="0" max="1" step="0.1" value="0.0">
+          <span id="resistanceValue">0.0</span>
+      </label>
     </div>
     
     
